@@ -25,10 +25,11 @@ endif
 ifeq ($(UNAME_S), Darwin) #APPLE
 	ECHO_MESSAGE = "Mac OS X"
 
-	OUTPUTNAME = cimgui.dylib
-	CXXFLAGS = -I/usr/local/include
-	CXXFLAGS += -Wall
-	LINKFLAGS = -dynamiclib
+	CXX=clang
+	OUTPUTNAME =
+	CXXFLAGS = -c -I/usr/local/include
+	CXXFLAGS += -Wall -v
+	LINKFLAGS = -lc++
 	CFLAGS = $(CXXFLAGS)
 endif
 
